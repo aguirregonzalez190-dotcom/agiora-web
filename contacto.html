@@ -131,85 +131,42 @@
 </footer>
 
 <script>
-  // Nav
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
+  const isMobile = () => window.innerWidth <= 640;
+
+  function setNavDisplay() {
+    if (isMobile()) {
+      if (!links.classList.contains('open')) {
+        links.style.cssText = 'display:none;';
+      }
+    } else {
+      links.style.cssText = 'display:flex;align-items:center;gap:2rem;';
+    }
+  }
+  setNavDisplay();
+  window.addEventListener('resize', setNavDisplay);
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
   toggle.addEventListener('click', () => {
-    if (links.classList.contains('open')) {
-  links.classList.remove('open');
-  links.style.display = 'none';
-} else {
-  links.classList.add('open');
-  links.style.display = 'flex';
-}
+    const isOpen = links.classList.toggle('open');
     const s = toggle.querySelectorAll('span');
-    if (links.classList.contains('open')) {
+    if (isOpen) {
+      links.style.cssText = 'display:flex;flex-direction:column;position:fixed;left:0;right:0;top:var(--nav-h);bottom:0;background:#ffffff;padding:2rem;gap:1.5rem;z-index:9999;border-top:1px solid #e8e8e8;overflow-y:auto;align-items:flex-start;';
       s[0].style.transform = 'translateY(6px) rotate(45deg)';
       s[1].style.opacity = '0';
       s[2].style.transform = 'translateY(-6px) rotate(-45deg)';
-    } else { s.forEach(x => { x.style.transform = ''; x.style.opacity = ''; }); }
+    } else {
+      links.style.cssText = 'display:none;';
+      s.forEach(x => { x.style.transform = ''; x.style.opacity = ''; });
+    }
   });
+
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.anim-fade-up').forEach(el => obs.observe(el));
-
-  // Supabase
-  const SUPABASE_URL = 'https://voaskwmhozktyfogbfrz.supabase.co';
-  const SUPABASE_KEY = 'sb_publishable_gIKMS3O_2ajH924Vd3oBaA_UuMZmfaA';
-
-  async function enviarFormulario() {
-    const btn = document.getElementById('submitBtn');
-    const msg = document.getElementById('formMsg');
-
-    const nombre   = document.getElementById('nombre').value.trim();
-    const email    = document.getElementById('email').value.trim();
-    const telefono = document.getElementById('telefono').value.trim();
-    const mensaje  = document.getElementById('mensaje').value.trim();
-
-    if (!nombre || !email || !mensaje) {
-      msg.textContent = 'Por favor completá nombre, email y mensaje.';
-      msg.className = 'form-msg error';
-      return;
-    }
-
-    btn.textContent = 'Enviando...';
-    btn.disabled = true;
-    msg.className = 'form-msg';
-
-    try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/contactos`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_KEY,
-          'Authorization': `Bearer ${SUPABASE_KEY}`,
-          'Prefer': 'return=minimal'
-        },
-        body: JSON.stringify({ nombre, email, telefono, mensaje })
-      });
-
-      if (res.ok) {
-        msg.textContent = '¡Mensaje enviado! Te respondemos en menos de 24 horas.';
-        msg.className = 'form-msg success';
-        document.getElementById('nombre').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('telefono').value = '';
-        document.getElementById('mensaje').value = '';
-      } else {
-        const err = await res.json();
-        throw new Error(err.message || 'Error al enviar');
-      }
-    } catch (e) {
-      msg.textContent = 'Hubo un error al enviar. Escribinos directamente a hola@agiora.com';
-      msg.className = 'form-msg error';
-    }
-
-    btn.textContent = 'Enviar mensaje';
-    btn.disabled = false;
-  }
 </script>
 </body>
 </html>
