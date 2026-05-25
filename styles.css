@@ -376,7 +376,8 @@ img { display: block; max-width: 100%; object-fit: cover; }
     overflow-y: auto;
   }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 1rem; color: var(--text); }
+  .nav-links a { font-size: 1rem; color: #0a0a0a !important; background: #ffffff; }
+  .nav-links .nav-cta { color: #0a0a0a !important; background: #ffffff; border-color: #0a0a0a; }
   .nav-toggle { display: flex; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
