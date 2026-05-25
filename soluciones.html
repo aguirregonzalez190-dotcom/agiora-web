@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluciones — AGIORA</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .service-block { padding: 6rem 0; border-bottom: 1px solid var(--border); }
+    .service-block:last-child { border-bottom: none; }
+    .service-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .service-inner.reverse { direction: rtl; }
+    .service-inner.reverse > * { direction: ltr; }
+    .service-img { aspect-ratio: 4/3; overflow: hidden; }
+    .service-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+    .service-img:hover img { transform: scale(1.04); }
+    .service-num { font-family: var(--font-display); font-size: 4rem; font-weight: 300; color: var(--border); line-height: 1; margin-bottom: 1rem; }
+    .service-items { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .service-items li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; color: var(--soft); }
+    .service-items li::before { content: '—'; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .service-inner, .service-inner.reverse { grid-template-columns: 1fr; direction: ltr; gap: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Agiora</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="sobreagiora.html">Nosotros</a>
+      <a href="soluciones.html" class="active">Soluciones</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contacto.html" class="nav-cta">Contacto</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label" style="animation: fadeUp 0.7s var(--ease) both;">Soluciones</span>
+    <h1 style="animation: fadeUp 0.7s 0.1s var(--ease) both; max-width: 700px;">Lo que hacemos,<br>y cómo lo hacemos</h1>
+    <p style="animation: fadeUp 0.7s 0.2s var(--ease) both; max-width:480px; margin-top:1.25rem;">Tres servicios pensados para construir marcas que se ven, se sienten y se quedan en la mente.</p>
+  </div>
+</section>
+
+<section style="padding:0;">
+  <div class="container">
+
+    <!-- BRANDING -->
+    <div class="service-block anim-fade-up">
+      <div class="service-inner">
+        <div>
+          <div class="service-num">01</div>
+          <span class="section-label">Branding desde cero</span>
+          <h2>Construimos tu marca</h2>
+          <p style="margin-top:1rem;">Diseñamos la identidad completa de tu marca: desde el concepto, el nombre y el logotipo, hasta el sistema visual completo y el tono de comunicación. Una base sólida sobre la que crecer.</p>
+          <ul class="service-items">
+            <li>Manual de marca</li>
+            <li>Diseño de logotipo</li>
+            <li>Sistema tipográfico</li>
+            <li>Paleta de colores</li>
+            <li>Lenguaje y tono de voz</li>
+            <li>Aplicaciones visuales</li>
+          </ul>
+          <a href="contacto.html" class="btn btn-outline" style="margin-top:2rem;">Solicitar información</a>
+        </div>
+        <div class="service-img">
+          <img src="img/servicio-branding.png" alt="Branding" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="service-block anim-fade-up">
+      <div class="service-inner reverse">
+        <div>
+          <div class="service-num">02</div>
+          <span class="section-label">Creación de contenido</span>
+          <h2>Imágenes y video que conectan</h2>
+          <p style="margin-top:1rem;">Producimos contenido visual de calidad para tu marca: fotografía, video, reels, motion graphics y piezas gráficas para todas tus plataformas. Estética profesional, narrativa con intención.</p>
+          <ul class="service-items">
+            <li>Sesiones fotográficas</li>
+            <li>Producción de video</li>
+            <li>Reels y contenido vertical</li>
+            <li>Motion graphics</li>
+            <li>Piezas gráficas para redes</li>
+            <li>Dirección creativa</li>
+          </ul>
+          <a href="contacto.html" class="btn btn-outline" style="margin-top:2rem;">Solicitar información</a>
+        </div>
+        <div class="service-img">
+          <img src="img/servicio-contenido.png" alt="Creación de contenido" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- REDES SOCIALES -->
+    <div class="service-block anim-fade-up">
+      <div class="service-inner">
+        <div>
+          <div class="service-num">03</div>
+          <span class="section-label">Gestión de redes sociales</span>
+          <h2>Tu marca activa todos los días</h2>
+          <p style="margin-top:1rem;">Administramos tus redes sociales con estrategia, calendario editorial y reportes mensuales. Planificación, publicación, community management y análisis de resultados. Todo en un solo lugar.</p>
+          <ul class="service-items">
+            <li>Estrategia de contenido</li>
+            <li>Calendario editorial mensual</li>
+            <li>Publicación y programación</li>
+            <li>Community management</li>
+            <li>Reportes y métricas</li>
+            <li>Optimización continua</li>
+          </ul>
+          <a href="contacto.html" class="btn btn-outline" style="margin-top:2rem;">Solicitar información</a>
+        </div>
+        <div class="service-img">
+          <img src="img/servicio-redes.png" alt="Gestión de redes sociales" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="cta-band anim-fade-up">
+  <span class="section-label" style="color:rgba(255,255,255,0.4);display:block;margin-bottom:1rem;">¿No sabés cuál necesitás?</span>
+  <h2>Conversemos y lo definimos juntos</h2>
+  <p>Contanos tu situación y te recomendamos qué tiene más impacto para tu marca ahora.</p>
+  <a href="contacto.html" class="btn btn-primary" style="background:#fff;color:var(--text);margin:0 auto;">Hablar con el equipo</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Agiora</span>
+        <p>Creamos marcas, contenido y gestionamos redes sociales para que tu negocio crezca con identidad propia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <div class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="sobreagiora.html">Nosotros</a>
+          <a href="soluciones.html">Soluciones</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="footer-links">
+          <a href="mailto:hola@agiora.com">hola@agiora.com</a>
+          <a href="contacto.html">Formulario de contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AGIORA</span>
+      <span>Hecho con criterio.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    const s = toggle.querySelectorAll('span');
+    if (links.classList.contains('open')) {
+      s[0].style.transform = 'translateY(6px) rotate(45deg)';
+      s[1].style.opacity = '0';
+      s[2].style.transform = 'translateY(-6px) rotate(-45deg)';
+    } else { s.forEach(x => { x.style.transform = ''; x.style.opacity = ''; }); }
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.anim-fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capacitación — AGIORA</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .programs-list { border-top: 1px solid var(--border); }
+    .program-row { display: grid; grid-template-columns: 3rem 1fr 1fr; gap: 3rem; padding: 3rem 0; border-bottom: 1px solid var(--border); align-items: start; }
+    .program-num { font-family: var(--font-display); font-size: 0.85rem; color: var(--muted); padding-top: 0.3rem; }
+    .program-row h3 { margin-bottom: 0.5rem; }
+    .program-row p { font-size: 0.88rem; }
+    .program-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+
+    .for-who { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); }
+    .for-who-cell { background: var(--bg); padding: 3rem 2.5rem; }
+    .for-who-cell h3 { margin-bottom: 0.75rem; font-size: 1.1rem; }
+    .for-who-cell p { font-size: 0.88rem; }
+
+    @media (max-width: 900px) {
+      .program-row { grid-template-columns: 2.5rem 1fr; }
+      .program-row > *:last-child { grid-column: 2; }
+      .for-who { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Agiora</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="sobreagiora.html">Nosotros</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="soluciones.html">Soluciones</a>
+      <a href="capacitacion.html" class="active">Capacitación</a>
+      <a href="contacto.html" class="nav-cta">Contacto</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label" style="animation: fadeUp 0.7s var(--ease) both;">Capacitación Digital</span>
+    <h1 style="animation: fadeUp 0.7s 0.1s var(--ease) both; max-width:700px;">Equipos que usan IA<br>como ventaja real</h1>
+    <p style="animation: fadeUp 0.7s 0.2s var(--ease) both; max-width:480px; margin-top:1.25rem;">No enseñamos herramientas por enseñarlas. Formamos equipos para que la IA trabaje para ellos desde el primer día.</p>
+  </div>
+</section>
+
+<!-- IMAGEN -->
+<div style="width:100%;aspect-ratio:16/6;overflow:hidden;">
+  <div class="img-placeholder" style="height:100%;font-size:0.65rem;">Imagen capacitación — 1920×720</div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;margin-bottom:5rem;align-items:end;" class="anim-fade-up">
+      <div>
+        <span class="section-label">Programas de formación</span>
+        <h2>Elige lo que tu equipo necesita</h2>
+      </div>
+      <p>Capacitaciones prácticas, adaptadas a tu industria y nivel. Sin teoría innecesaria, con resultados desde la primera sesión.</p>
+    </div>
+
+    <div class="programs-list">
+      <div class="program-row anim-fade-up">
+        <span class="program-num">01</span>
+        <div>
+          <h3>Entrenamiento en IA para equipos</h3>
+          <p>Talleres prácticos para que tu equipo use ChatGPT, Claude y Gemini en su trabajo diario. Redacción, análisis, automatización básica y decisiones con IA.</p>
+        </div>
+        <div>
+          <div class="program-tags">
+            <span class="tag">ChatGPT</span>
+            <span class="tag">Claude</span>
+            <span class="tag">Prompting</span>
+            <span class="tag">Flujos de trabajo</span>
+          </div>
+        </div>
+      </div>
+      <div class="program-row anim-fade-up anim-delay-1">
+        <span class="program-num">02</span>
+        <div>
+          <h3>Gestión de RRSS para equipos</h3>
+          <p>Estrategia de contenido, planificación editorial, métricas y herramientas digitales para gestionar redes con criterio y consistencia.</p>
+        </div>
+        <div>
+          <div class="program-tags">
+            <span class="tag">Instagram</span>
+            <span class="tag">LinkedIn</span>
+            <span class="tag">Canva</span>
+            <span class="tag">Métricas</span>
+          </div>
+        </div>
+      </div>
+      <div class="program-row anim-fade-up anim-delay-2">
+        <span class="program-num">03</span>
+        <div>
+          <h3>Estrategia digital</h3>
+          <p>Formación en planificación digital integral: audiencias, canales, KPIs y medición de resultados. Para equipos que quieren tomar decisiones con datos.</p>
+        </div>
+        <div>
+          <div class="program-tags">
+            <span class="tag">Analytics</span>
+            <span class="tag">Estrategia</span>
+            <span class="tag">KPIs</span>
+            <span class="tag">Audiencias</span>
+          </div>
+        </div>
+      </div>
+      <div class="program-row anim-fade-up anim-delay-3">
+        <span class="program-num">04</span>
+        <div>
+          <h3>Automatización para no técnicos</h3>
+          <p>Introducción práctica a Zapier y Make para equipos sin conocimientos técnicos. Aprenden a conectar apps y eliminar tareas repetitivas.</p>
+        </div>
+        <div>
+          <div class="program-tags">
+            <span class="tag">Zapier</span>
+            <span class="tag">Make</span>
+            <span class="tag">Google Workspace</span>
+            <span class="tag">Sin código</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<section class="section-sm">
+  <div class="container">
+    <span class="section-label anim-fade-up" style="display:block;text-align:center;margin-bottom:3rem;">¿Para quién?</span>
+    <div class="for-who anim-fade-up">
+      <div class="for-who-cell">
+        <h3>Equipos de marketing</h3>
+        <p>Para áreas de comunicación que quieren potenciar su trabajo con IA y herramientas digitales.</p>
+      </div>
+      <div class="for-who-cell">
+        <h3>Pymes y emprendedores</h3>
+        <p>Para dueños de negocios que gestionan solos su presencia digital y quieren hacerlo mejor.</p>
+      </div>
+      <div class="for-who-cell">
+        <h3>Organizaciones</h3>
+        <p>Para instituciones que quieren capacitar a sus colaboradores en transformación digital.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band anim-fade-up">
+  <span class="section-label" style="color:rgba(255,255,255,0.4);display:block;margin-bottom:1rem;">¿Listo para capacitar tu equipo?</span>
+  <h2>Armamos el programa<br>a tu medida</h2>
+  <p>Contanos el perfil de tu equipo y te proponemos el formato adecuado.</p>
+  <a href="contacto.html" class="btn btn-primary" style="background:#fff;color:var(--text);margin:0 auto;">Solicitar información</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Agiora</span>
+        <p>Presencia digital, automatización inteligente y capacitación en IA para que tu negocio crezca.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <div class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="sobreagiora.html">Nosotros</a>
+      <a href="soluciones.html">Soluciones</a>
+          <a href="portfolio.html">Portfolio</a>
+      <a href="capacitacion.html">Capacitación</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="footer-links">
+          <a href="mailto:hola@agiora.com">hola@agiora.com</a>
+          <a href="contacto.html">Formulario de contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AGIORA</span>
+      <span>Hecho con IA, entregado con criterio.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    const s = toggle.querySelectorAll('span');
+    if (links.classList.contains('open')) {
+      s[0].style.transform = 'translateY(6px) rotate(45deg)';
+      s[1].style.opacity = '0';
+      s[2].style.transform = 'translateY(-6px) rotate(-45deg)';
+    } else { s.forEach(x => { x.style.transform = ''; x.style.opacity = ''; }); }
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.anim-fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

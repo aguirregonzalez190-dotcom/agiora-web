@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosotros — AGIORA</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .values-list { display: flex; flex-direction: column; border-top: 1px solid var(--border); margin-top: 4rem; }
+    .value-row { display: grid; grid-template-columns: 3rem 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); align-items: start; }
+    .value-num { font-family: var(--font-display); font-size: 0.85rem; color: var(--muted); padding-top: 0.2rem; }
+    .value-row h3 { margin-bottom: 0.4rem; font-size: 1.1rem; }
+    .value-row p { font-size: 0.88rem; }
+    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+    .mission-cell { background: var(--bg); padding: 3rem; }
+    .mission-cell h3 { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; font-family: var(--font-body); font-weight: 400; }
+    .mission-cell blockquote { font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 300; line-height: 1.5; }
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; gap: 3rem; }
+      .mission-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Agiora</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="sobreagiora.html" class="active">Nosotros</a>
+      <a href="soluciones.html">Soluciones</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contacto.html" class="nav-cta">Contacto</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label" style="animation: fadeUp 0.7s var(--ease) both;">Sobre Agiora</span>
+    <h1 style="animation: fadeUp 0.7s 0.1s var(--ease) both; max-width:700px;">Construimos marcas<br>con identidad propia</h1>
+    <p style="animation: fadeUp 0.7s 0.2s var(--ease) both; max-width:480px; margin-top:1.25rem;">AGIORA nació para construir marcas que importan. Branding, contenido y gestión de redes con criterio y estética.</p>
+  </div>
+</section>
+
+<!-- IMAGEN GRANDE -->
+<div style="width:100%;aspect-ratio:16/7;overflow:hidden;">
+  <!-- REEMPLAZAR: <img src="img/equipo.jpg" alt="Equipo AGIORA" style="width:100%;height:100%;object-fit:cover;" /> -->
+  <img src="img/equipo.png" alt="Equipo AGIORA" style="width:100%;height:100%;object-fit:cover;" />
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="two-col anim-fade-up">
+      <div>
+        <span class="section-label">Nuestra historia</span>
+        <h2>Marcas que importan, contenido que conecta</h2>
+      </div>
+      <div>
+        <p>AGIORA surge de la experiencia directa con marcas que no logran construir una identidad sólida, que producen contenido sin estrategia y que gestionan sus redes sin dirección clara.</p>
+        <p style="margin-top:1rem;">Decidimos hacer algo diferente: branding estratégico, contenido con propósito y gestión de redes con criterio. Todo bien hecho, todo con identidad.</p>
+        <p style="margin-top:1rem;">El nombre lo dice todo — <strong>AGIORA</strong> es agilidad, es ahora.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<section class="section-sm">
+  <div class="container">
+    <div class="mission-grid anim-fade-up">
+      <div class="mission-cell">
+        <h3>Misión</h3>
+        <blockquote>Construir marcas con identidad propia a través de branding, contenido y gestión de redes sociales que generan conexión real.</blockquote>
+      </div>
+      <div class="mission-cell">
+        <h3>Visión</h3>
+        <blockquote>Ser la agencia de referencia para marcas que quieren construir una identidad sólida y una comunidad que las acompañe.</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<section class="section">
+  <div class="container">
+    <span class="section-label anim-fade-up">Nuestros valores</span>
+    <h2 class="anim-fade-up">Lo que nos guía</h2>
+    <div class="values-list">
+      <div class="value-row anim-fade-up">
+        <span class="value-num">01</span>
+        <div>
+          <h3>Velocidad con propósito</h3>
+          <p>Ejecutamos rápido pero con dirección clara. La velocidad sin criterio genera ruido, no resultados.</p>
+        </div>
+      </div>
+      <div class="value-row anim-fade-up anim-delay-1">
+        <span class="value-num">02</span>
+        <div>
+          <h3>Honestidad ante todo</h3>
+          <p>Decimos lo que puede hacerse, en qué tiempo y a qué costo. Sin promesas vacías.</p>
+        </div>
+      </div>
+      <div class="value-row anim-fade-up anim-delay-2">
+        <span class="value-num">03</span>
+        <div>
+          <h3>Estética con propósito</h3>
+          <p>El diseño y el contenido tienen que comunicar algo. La estética sin mensaje es solo decoración.</p>
+        </div>
+      </div>
+      <div class="value-row anim-fade-up anim-delay-3">
+        <span class="value-num">04</span>
+        <div>
+          <h3>Cercanía con el cliente</h3>
+          <p>Trabajamos con vos, explicamos las decisiones y te dejamos en control siempre.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band anim-fade-up">
+  <span class="section-label" style="color:rgba(255,255,255,0.4);display:block;margin-bottom:1rem;">¿Trabajamos juntos?</span>
+  <h2>Empecemos a construir</h2>
+  <p>Contanos tu proyecto y te decimos cómo podemos ayudarte.</p>
+  <a href="contacto.html" class="btn btn-primary" style="background:#fff;color:var(--text);margin:0 auto;">Escribinos hoy</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Agiora</span>
+        <p>Creamos marcas, contenido y gestionamos redes sociales para que tu negocio crezca con identidad propia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <div class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="sobreagiora.html">Nosotros</a>
+          <a href="soluciones.html">Soluciones</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="footer-links">
+          <a href="mailto:hola@agiora.com">hola@agiora.com</a>
+          <a href="contacto.html">Formulario de contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AGIORA</span>
+      <span>Hecho con IA, entregado con criterio.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    const s = toggle.querySelectorAll('span');
+    if (links.classList.contains('open')) {
+      s[0].style.transform = 'translateY(6px) rotate(45deg)';
+      s[1].style.opacity = '0';
+      s[2].style.transform = 'translateY(-6px) rotate(-45deg)';
+    } else { s.forEach(x => { x.style.transform = ''; x.style.opacity = ''; }); }
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.anim-fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

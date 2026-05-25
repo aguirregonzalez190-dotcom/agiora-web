@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — AGIORA</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* FILTROS */
+    .filters {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: none;
+      border: 1px solid var(--border);
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+      transition: all var(--t) var(--ease);
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    /* GRID MASONRY */
+    .portfolio-grid {
+      columns: 2;
+      column-gap: 1.5rem;
+      margin-top: 4rem;
+    }
+    .portfolio-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .portfolio-item-img {
+      width: 100%;
+      overflow: hidden;
+      background: var(--surface);
+      position: relative;
+    }
+    .portfolio-item-img img {
+      width: 100%;
+      display: block;
+      transition: transform 0.6s var(--ease);
+    }
+    .portfolio-item-img .img-placeholder {
+      width: 100%;
+      font-size: 0.65rem;
+    }
+    .portfolio-item:hover .portfolio-item-img img { transform: scale(1.04); }
+
+    /* Overlay hover */
+    .portfolio-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--t) var(--ease);
+    }
+    .portfolio-item:hover .portfolio-item-overlay { background: rgba(0,0,0,0.15); }
+    .portfolio-item-overlay span {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0;
+      transition: opacity var(--t) var(--ease);
+    }
+    .portfolio-item:hover .portfolio-item-overlay span { opacity: 1; }
+
+    .portfolio-item-info {
+      padding: 0.85rem 0 0;
+    }
+    .portfolio-item-info .cat {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .portfolio-item-info h3 {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* Items ocultos por filtro */
+    .portfolio-item.hidden { display: none; }
+
+    @media (max-width: 640px) {
+      .portfolio-grid { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Agiora</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="sobreagiora.html">Nosotros</a>
+      <a href="soluciones.html">Soluciones</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="contacto.html" class="nav-cta">Contacto</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero" style="padding-bottom:3rem;">
+  <div class="container">
+    <span class="section-label" style="animation: fadeUp 0.7s var(--ease) both;">Portfolio</span>
+    <h1 style="animation: fadeUp 0.7s 0.1s var(--ease) both; max-width:600px;">Nuestro trabajo</h1>
+    <p style="animation: fadeUp 0.7s 0.2s var(--ease) both; max-width:440px; margin-top:1.25rem;">Proyectos que reflejan nuestro enfoque: digital con criterio, resultados con impacto.</p>
+    <div class="filters" style="animation: fadeUp 0.7s 0.3s var(--ease) both;">
+      <button class="filter-btn active" data-filter="all">Todo</button>
+      <button class="filter-btn" data-filter="branding">Branding</button>
+      <button class="filter-btn" data-filter="contenido">Contenido</button>
+      <button class="filter-btn" data-filter="redes">Redes Sociales</button>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<section class="section-sm">
+  <div class="container">
+    <div class="portfolio-grid">
+
+      <!-- PROYECTO 1 — grande -->
+      <a href="#" class="portfolio-item anim-fade-up" data-cat="branding">
+        <div class="portfolio-item-img">
+          <!-- REEMPLAZAR: <img src="img/portfolio/proyecto1.jpg" alt="Proyecto 1" /> -->
+          <div class="img-placeholder" style="aspect-ratio:4/5;">Proyecto 01 — 800×1000</div>
+          <div class="portfolio-item-overlay"><span>Ver proyecto</span></div>
+        </div>
+        <div class="portfolio-item-info">
+          <span class="cat">Branding</span>
+          <h3>Nombre del cliente</h3>
+        </div>
+      </a>
+
+      <!-- PROYECTO 2 — apaisado -->
+      <a href="#" class="portfolio-item anim-fade-up anim-delay-1" data-cat="contenido">
+        <div class="portfolio-item-img">
+          <div class="img-placeholder" style="aspect-ratio:4/3;">Proyecto 02 — 800×600</div>
+          <div class="portfolio-item-overlay"><span>Ver proyecto</span></div>
+        </div>
+        <div class="portfolio-item-info">
+          <span class="cat">Contenido</span>
+          <h3>Nombre del cliente</h3>
+        </div>
+      </a>
+
+      <!-- PROYECTO 3 — cuadrado -->
+      <a href="#" class="portfolio-item anim-fade-up anim-delay-2" data-cat="redes">
+        <div class="portfolio-item-img">
+          <div class="img-placeholder" style="aspect-ratio:1/1;">Proyecto 03 — 800×800</div>
+          <div class="portfolio-item-overlay"><span>Ver proyecto</span></div>
+        </div>
+        <div class="portfolio-item-info">
+          <span class="cat">Redes Sociales</span>
+          <h3>Nombre del cliente</h3>
+        </div>
+      </a>
+
+      <!-- PROYECTO 4 -->
+      <a href="#" class="portfolio-item anim-fade-up" data-cat="branding">
+        <div class="portfolio-item-img">
+          <div class="img-placeholder" style="aspect-ratio:4/5;">Proyecto 04 — 800×1000</div>
+          <div class="portfolio-item-overlay"><span>Ver proyecto</span></div>
+        </div>
+        <div class="portfolio-item-info">
+          <span class="cat">Branding</span>
+          <h3>Nombre del cliente</h3>
+        </div>
+      </a>
+
+      <!-- PROYECTO 5 -->
+      <a href="#" class="portfolio-item anim-fade-up anim-delay-1" data-cat="contenido">
+        <div class="portfolio-item-img">
+          <div class="img-placeholder" style="aspect-ratio:4/3;">Proyecto 05 — 800×600</div>
+          <div class="portfolio-item-overlay"><span>Ver proyecto</span></div>
+        </div>
+        <div class="portfolio-item-info">
+          <span class="cat">Contenido</span>
+          <h3>Nombre del cliente</h3>
+        </div>
+      </a>
+
+      <!-- PROYECTO 6 -->
+      <a href="#" class="portfolio-item anim-fade-up anim-delay-2" data-cat="branding">
+        <div class="portfolio-item-img">
+          <div class="img-placeholder" style="aspect-ratio:4/5;">Proyecto 06 — 800×1000</div>
+          <div class="portfolio-item-overlay"><span>Ver proyecto</span></div>
+        </div>
+        <div class="portfolio-item-info">
+          <span class="cat">Branding</span>
+          <h3>Nombre del cliente</h3>
+        </div>
+      </a>
+
+      <!-- PROYECTO 7 -->
+      <a href="#" class="portfolio-item anim-fade-up" data-cat="redes">
+        <div class="portfolio-item-img">
+          <div class="img-placeholder" style="aspect-ratio:1/1;">Proyecto 07 — 800×800</div>
+          <div class="portfolio-item-overlay"><span>Ver proyecto</span></div>
+        </div>
+        <div class="portfolio-item-info">
+          <span class="cat">Redes Sociales</span>
+          <h3>Nombre del cliente</h3>
+        </div>
+      </a>
+
+      <!-- PROYECTO 8 -->
+      <a href="#" class="portfolio-item anim-fade-up anim-delay-1" data-cat="branding">
+        <div class="portfolio-item-img">
+          <div class="img-placeholder" style="aspect-ratio:4/3;">Proyecto 08 — 800×600</div>
+          <div class="portfolio-item-overlay"><span>Ver proyecto</span></div>
+        </div>
+        <div class="portfolio-item-info">
+          <span class="cat">Branding</span>
+          <h3>Nombre del cliente</h3>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <span class="section-label" style="color:rgba(255,255,255,0.4);display:block;margin-bottom:1rem;">¿Tu proyecto es el próximo?</span>
+  <h2>Trabajemos juntos</h2>
+  <p>Contanos tu proyecto y construimos algo que valga la pena mostrar.</p>
+  <a href="contacto.html" class="btn btn-primary" style="background:#fff;color:var(--text);margin:0 auto;">Conversemos</a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Agiora</span>
+        <p>Creamos marcas, contenido y gestionamos redes sociales para que tu negocio crezca con identidad propia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <div class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="sobreagiora.html">Nosotros</a>
+          <a href="soluciones.html">Soluciones</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="footer-links">
+          <a href="mailto:hola@agiora.com">hola@agiora.com</a>
+          <a href="contacto.html">Formulario de contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AGIORA</span>
+      <span>Hecho con IA, entregado con criterio.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    const s = toggle.querySelectorAll('span');
+    if (links.classList.contains('open')) {
+      s[0].style.transform = 'translateY(6px) rotate(45deg)';
+      s[1].style.opacity = '0';
+      s[2].style.transform = 'translateY(-6px) rotate(-45deg)';
+    } else { s.forEach(x => { x.style.transform = ''; x.style.opacity = ''; }); }
+  });
+
+  // Filtros
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.portfolio-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      items.forEach(item => {
+        if (filter === 'all' || item.dataset.cat === filter) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Animaciones
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.anim-fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

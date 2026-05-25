@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — AGIORA</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 2.5rem; margin-top: 3rem; }
+    .contact-item h4 { font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; font-weight: 400; }
+    .contact-item p, .contact-item a { font-family: var(--font-display); font-size: 1.2rem; font-weight: 300; color: var(--text); }
+    .contact-item a:hover { opacity: 0.6; }
+    .form-grid { display: flex; flex-direction: column; gap: 2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
+      .form-row { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Agiora</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="sobreagiora.html">Nosotros</a>
+      <a href="soluciones.html">Soluciones</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contacto.html" class="nav-cta active">Contacto</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label" style="animation: fadeUp 0.7s var(--ease) both;">Contacto</span>
+    <h1 style="animation: fadeUp 0.7s 0.1s var(--ease) both; max-width:600px;">Hablemos de tu marca</h1>
+    <p style="animation: fadeUp 0.7s 0.2s var(--ease) both; max-width:440px; margin-top:1.25rem;">Contanos tu proyecto y te respondemos en menos de 24 horas con una propuesta concreta.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="anim-fade-up">
+        <h2>Escribinos</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <h4>Email</h4>
+            <a href="mailto:hola@agiora.com">hola@agiora.com</a>
+          </div>
+          <div class="contact-item">
+            <h4>Respuesta</h4>
+            <p>Menos de 24 horas</p>
+          </div>
+          <div class="contact-item">
+            <h4>Ubicación</h4>
+            <p>Santiago, Chile</p>
+          </div>
+        </div>
+      </div>
+      <div class="anim-fade-up anim-delay-1">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="tu@email.com" />
+            </div>
+            <div class="form-group">
+              <label>Teléfono</label>
+              <input type="tel" placeholder="+56 9 xxxx xxxx" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mensaje</label>
+            <textarea placeholder="Contanos tu proyecto o desafío..."></textarea>
+          </div>
+          <div>
+            <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Agiora</span>
+        <p>Creamos marcas, contenido y gestionamos redes sociales para que tu negocio crezca con identidad propia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <div class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="sobreagiora.html">Nosotros</a>
+          <a href="soluciones.html">Soluciones</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="footer-links">
+          <a href="mailto:hola@agiora.com">hola@agiora.com</a>
+          <a href="contacto.html">Formulario de contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AGIORA</span>
+      <span>Hecho con criterio.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    const s = toggle.querySelectorAll('span');
+    if (links.classList.contains('open')) {
+      s[0].style.transform = 'translateY(6px) rotate(45deg)';
+      s[1].style.opacity = '0';
+      s[2].style.transform = 'translateY(-6px) rotate(-45deg)';
+    } else { s.forEach(x => { x.style.transform = ''; x.style.opacity = ''; }); }
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.anim-fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGIORA — Agencia de Branding y Contenido</title>
+  <meta name="description" content="Creamos marcas desde cero, producimos contenido y gestionamos redes sociales." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .hero-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; display: block;
+      animation: fadeUp 0.8s var(--ease) both;
+    }
+    .hero-content h1 { animation: fadeUp 0.8s 0.1s var(--ease) both; }
+    .hero-content p { animation: fadeUp 0.8s 0.2s var(--ease) both; }
+    .hero-actions { animation: fadeUp 0.8s 0.3s var(--ease) both; }
+
+    .services-list { border-top: 1px solid var(--border); }
+    .service-row {
+      display: grid;
+      grid-template-columns: 3rem 1fr auto;
+      align-items: center;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      transition: opacity var(--t) var(--ease);
+    }
+    .service-row:hover { opacity: 0.6; }
+    .service-row-num { font-family: var(--font-display); font-size: 0.85rem; color: var(--muted); }
+    .service-row-title { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 300; }
+    .service-row-arrow { font-size: 1.2rem; color: var(--muted); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    @media (max-width: 640px) {
+      .service-row { grid-template-columns: 2rem 1fr auto; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Agiora</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="sobreagiora.html">Nosotros</a>
+      <a href="soluciones.html">Soluciones</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contacto.html" class="nav-cta">Contacto</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="img/hero.png" alt="AGIORA" style="width:100%;height:100%;object-fit:cover;" />
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content" style="max-width:var(--max);margin:0 auto;width:100%;">
+    <span class="hero-eyebrow">Agencia de Branding y Contenido</span>
+    <h1>Marcas con identidad,<br>contenido con propósito.</h1>
+    <p>Creamos marcas desde cero, producimos contenido visual y gestionamos redes sociales que generan conexión real.</p>
+    <div class="hero-actions">
+      <a href="soluciones.html" class="btn btn-primary">Ver servicios</a>
+      <a href="contacto.html" class="btn btn-outline">Conversemos</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <span class="section-label">Nuestros servicios</span>
+        <h2>Lo que hacemos</h2>
+      </div>
+      <div>
+        <p>Tres servicios pensados para construir marcas que se ven, se sienten y se quedan en la mente.</p>
+        <a href="soluciones.html" class="btn btn-ghost" style="margin-top:1.5rem;">Ver todos los servicios →</a>
+      </div>
+    </div>
+    <div class="services-list" style="margin-top:4rem;">
+      <a href="soluciones.html" class="service-row anim-fade-up">
+        <span class="service-row-num">01</span>
+        <span class="service-row-title">Branding desde cero</span>
+        <span class="service-row-arrow">→</span>
+      </a>
+      <a href="soluciones.html" class="service-row anim-fade-up anim-delay-1">
+        <span class="service-row-num">02</span>
+        <span class="service-row-title">Creación de contenido</span>
+        <span class="service-row-arrow">→</span>
+      </a>
+      <a href="soluciones.html" class="service-row anim-fade-up anim-delay-2">
+        <span class="service-row-num">03</span>
+        <span class="service-row-title">Gestión de redes sociales</span>
+        <span class="service-row-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- IMAGEN GRANDE -->
+<section style="padding:0;">
+  <div style="width:100%;aspect-ratio:16/7;overflow:hidden;position:relative;">
+    <img src="img/secundaria.png" alt="AGIORA" style="width:100%;height:100%;object-fit:cover;" />
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="section">
+  <div class="container">
+    <div class="two-col anim-fade-up">
+      <div>
+        <span class="section-label">Sobre Agiora</span>
+        <h2>Ejecutamos mientras otros planean</h2>
+      </div>
+      <div>
+        <p>AGIORA nació para construir marcas que importan. Diseñamos identidad, creamos contenido y gestionamos comunidades con criterio, velocidad y resultados.</p>
+        <a href="sobreagiora.html" class="btn btn-ghost" style="margin-top:1.5rem;">Conocenos →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band anim-fade-up">
+  <span class="section-label" style="color:rgba(255,255,255,0.4);justify-content:center;display:block;">¿Empezamos?</span>
+  <h2>Tu próxima marca está<br>a una conversación de distancia</h2>
+  <p>Contanos tu proyecto y te proponemos cómo construirlo.</p>
+  <a href="contacto.html" class="btn btn-primary" style="background:#fff;color:var(--text);margin:0 auto;">Hablar con el equipo</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Agiora</span>
+        <p>Creamos marcas, contenido y gestionamos redes sociales para que tu negocio crezca con identidad propia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <div class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="sobreagiora.html">Nosotros</a>
+          <a href="soluciones.html">Soluciones</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="footer-links">
+          <a href="mailto:hola@agiora.com">hola@agiora.com</a>
+          <a href="contacto.html">Formulario de contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AGIORA</span>
+      <span>Hecho con criterio.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    const s = toggle.querySelectorAll('span');
+    if (links.classList.contains('open')) {
+      s[0].style.transform = 'translateY(6px) rotate(45deg)';
+      s[1].style.opacity = '0';
+      s[2].style.transform = 'translateY(-6px) rotate(-45deg)';
+    } else { s.forEach(x => { x.style.transform = ''; x.style.opacity = ''; }); }
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.anim-fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
