@@ -374,7 +374,7 @@ img { display: block; max-width: 100%; object-fit: cover; }
     gap: 1.5rem; z-index: 99;
     border-top: 1px solid var(--border);
   }
-  .nav-links.open { display: flex; }
+  .nav-links.open { display: flex; background: #ffffff; }
   .nav-links a { font-size: 1rem; }
   .nav-toggle { display: flex; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
