@@ -369,13 +369,14 @@ img { display: block; max-width: 100%; object-fit: cover; }
 @media (max-width: 640px) {
   .nav-links {
     display: none; flex-direction: column;
-    position: fixed; inset: 0; top: var(--nav-h);
-    background: var(--bg); padding: 2rem;
-    gap: 1.5rem; z-index: 99;
+    position: fixed; left: 0; right: 0; top: var(--nav-h); bottom: 0;
+    background: #ffffff; padding: 2rem;
+    gap: 1.5rem; z-index: 999;
     border-top: 1px solid var(--border);
+    overflow-y: auto;
   }
-  .nav-links.open { display: flex; background: #ffffff; }
-  .nav-links a { font-size: 1rem; }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 1rem; color: var(--text); }
   .nav-toggle { display: flex; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
