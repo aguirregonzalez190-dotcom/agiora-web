@@ -48,7 +48,7 @@
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Agiora</a>
-    <div class="nav-links" id="navLinks">
+    <div class="nav-links" id="navLinks" style="display:none;">
       <a href="index.html" class="active">Inicio</a>
       <a href="sobreagiora.html">Nosotros</a>
       <a href="soluciones.html">Soluciones</a>
@@ -183,7 +183,13 @@
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => {
-    links.classList.toggle('open');
+    if (links.classList.contains('open')) {
+  links.classList.remove('open');
+  links.style.display = 'none';
+} else {
+  links.classList.add('open');
+  links.style.display = 'flex';
+}
     const s = toggle.querySelectorAll('span');
     if (links.classList.contains('open')) {
       s[0].style.transform = 'translateY(6px) rotate(45deg)';
